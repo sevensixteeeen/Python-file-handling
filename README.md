@@ -46,3 +46,25 @@ Because "r" for read, and "t" for text are the default values, you do not need t
 
 Note: Make sure the file exists, or else you will get an error.
 
+## Open a file on the 
+Assume we have the following file, located in the same folder as Python.
+
+**Domofile.txt**
+```
+Hello! Welcome to demofile.txt
+This file is for testing purposes.
+Working….
+```
+
+To open the file, use the bulit-in open() function.
+
+The open() function return a file object, Which has a read() method for reading the content of the file:
+
+**Ex:**
+```
+f=open("demofile.txt")
+print(f.read())     
+```
+
+If the file is located in a different location, you will have to specify the file path, like this:
+
