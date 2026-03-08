@@ -156,3 +156,69 @@ with open("demofile.txt") as f:
   print(f.read())
 ```
 
+## Overwrite existing content 
+To overwrite the existing content to the file, use the w parameter:
+
+**Ex:**
+```Python
+with open("demofile.txt", "w") as f:
+  f.write("Woops! I have deleted the content!")
+
+#open and read the file after the overwriting:
+with open("demofile.txt") as f:
+  print(f.read())
+```
+
+Note: the "w" method will overwrite the entire file.
+
+## Create a new file 
+To create a new file in Python, use the open() method, with one of the following parameters:
+
+"x" - Create - will create a file, returns an error if the file exists
+
+"a" - Append - will create a file if the specified file does not exists
+
+"w" - Write - will create a file if the specified file does not exists
+
+
+**Ex:**
+```
+f=open("life.txt","x")
+```
+Result: a new empty file is created.
+
+Note: If the file already exists, an error will be raised.
+
+## Delete a file 
+
+to delete a file you must import os module, and run its os.remove() function:
+
+**Ex:**
+```Python
+import os
+os.remove("demofile.txt")
+```
+
+## Check if file exist
+To avoid getting an error, you might want to check if the file exists before you try to delete it:
+
+**Ex:**
+```Python
+import os
+if os.path.exists("demofile.txt"):
+  os.remove("demofile.txt")
+else:
+  print("The file does not exist")
+```
+
+Delete Folder 
+
+To delete an entire folder, use the os.rmdir() method:
+
+**Ex:**
+```Python
+import os
+os.rdmir("myfolder")
+```
+
+Note: You can only remove empty folders.
